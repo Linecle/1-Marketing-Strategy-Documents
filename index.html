@@ -1,10 +1,74 @@
-<html>
-  <head><title>Marketing Documents</title></head>
-  <body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marketing Documents</title>
+  <!-- Bootstrap Latest Version -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEJx3L5/Jf6d8dOjCp7YZw4F6RYCqvcf3F5lZOtWQlrJ4V5ifkPbmM13XsspE" crossorigin="anonymous">
+  <style>
+    body {
+      background-color: #f4f4f4;
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      margin-top: 50px;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 30px;
+    }
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    li {
+      margin-bottom: 15px;
+    }
+    li a {
+      color: #007bff;
+      text-decoration: none;
+      font-size: 18px;
+    }
+    li a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
     <h1>Welcome to Linecle Marketing Documents</h1>
-    <ul>
-      <li><a href="products/launch-of-the-ecomotion-pro-x-electric-bike.pdf">Ecomotion Pro-X Bike</a></li>
-      <!-- Add links to more files here -->
+    <ul id="file-list">
+      <!-- Links will be dynamically added here -->
     </ul>
-  </body>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const links = [
+        {name: "Ecomotion Pro-X Bike", url: "products/launch-of-the-ecomotion-pro-x-electric-bike.pdf"},
+        {name: "Grand Opening of Haven Retreats", url: "businesses-projects/grand-opening-of-haven-retreats-luxury-boutique-hotel.pdf"},
+        {name: "Explore Horizons Premium Guided Tour", url: "products/launch-of-explore-horizons-premium-guided-tour-services.pdf"}
+        // Add more links to the array as needed
+      ];
+
+      const ul = document.getElementById("file-list");
+      links.forEach(link => {
+        const li = document.createElement("li");
+        li.innerHTML = `<a href="${link.url}" target="_blank">${link.name}</a>`;
+        ul.appendChild(li);
+      });
+    });
+  </script>
+
+  <!-- Bootstrap JS (Optional for functionality like modals, dropdowns, etc.) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pzjw8f+ua7Kw1TIq0YdQbV4xe5g4gvsXp4KY3Z5KN1biXhW7HZtwAc7RI2G7Jdoz" crossorigin="anonymous"></script>
+
+</body>
 </html>
